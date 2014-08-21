@@ -49,6 +49,8 @@ module Gmail
         
         opts[:after]      and search.concat ['SINCE', opts[:after].to_imap_date]
         opts[:before]     and search.concat ['BEFORE', opts[:before].to_imap_date]
+        opts[:newer_than] and search.concat ['NEWER_THAN', opts[:newer_than]]
+        opts[:older_than] and search.concat ['OLDER_THAN', opts[:older_than]]
         opts[:on]         and search.concat ['ON', opts[:on].to_imap_date]
         opts[:from]       and search.concat ['FROM', opts[:from]]
         opts[:to]         and search.concat ['TO', opts[:to]]
